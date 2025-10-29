@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="926f307c-8779-40c9-9062-026939c37168" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/public/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +93,7 @@
       <updated>1761726401003</updated>
       <workItem from="1761726402195" duration="1148000" />
       <workItem from="1761728823883" duration="1138000" />
-      <workItem from="1761742628845" duration="2356000" />
+      <workItem from="1761742628845" duration="2660000" />
     </task>
     <task id="LOCAL-00001" summary="Setup Symfony &amp; TailwindCSS">
       <option name="closed" value="true" />
