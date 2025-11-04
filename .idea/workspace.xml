@@ -4,10 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="926f307c-8779-40c9-9062-026939c37168" name="Changes" comment="Setup">
-      <change afterPath="$PROJECT_DIR$/app/assets/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    <list default="true" id="926f307c-8779-40c9-9062-026939c37168" name="Changes" comment="Tailwind Installation">
+      <change afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.env.dev" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/styles/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/console" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/bundles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/packages/cache.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/packages/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/packages/routing.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/preload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routes/framework.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/services.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/packages.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/postcss.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Controller/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/symfony.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,29 +64,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "JavaScript Debug.127.0.0.1:8000.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;JavaScript Debug.127.0.0.1:8000.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/templates/home" />
       <recent name="$PROJECT_DIR$/.idea" />
     </key>
   </component>
@@ -95,7 +119,11 @@
       <updated>1761726401003</updated>
       <workItem from="1761726402195" duration="1148000" />
       <workItem from="1761728823883" duration="1138000" />
-      <workItem from="1761742628845" duration="2974000" />
+      <workItem from="1761742628845" duration="3472000" />
+      <workItem from="1761835536678" duration="25000" />
+      <workItem from="1762093398464" duration="76000" />
+      <workItem from="1762242195649" duration="8000" />
+      <workItem from="1762246045128" duration="3010000" />
     </task>
     <task id="LOCAL-00001" summary="Setup Symfony &amp; TailwindCSS">
       <option name="closed" value="true" />
@@ -145,7 +173,23 @@
       <option name="project" value="LOCAL" />
       <updated>1761745355093</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Tailwind Installation">
+      <option name="closed" value="true" />
+      <created>1761745806070</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1761745806070</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Tailwind Installation">
+      <option name="closed" value="true" />
+      <created>1761745817908</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1761745817908</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +202,7 @@
     <MESSAGE value="Setup Symfony &amp; TailwindCSS" />
     <MESSAGE value="test" />
     <MESSAGE value="Setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setup" />
+    <MESSAGE value="Tailwind Installation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tailwind Installation" />
   </component>
 </project>

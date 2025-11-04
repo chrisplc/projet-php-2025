@@ -12,9 +12,9 @@
         "symfony/flex": "^2",
         "symfony/framework-bundle": "7.3.*",
         "symfony/runtime": "7.3.*",
+        "symfony/twig-bundle": "7.3.*",
+        "symfony/webpack-encore-bundle": "^2.3",
         "symfony/yaml": "7.3.*"
-    },
-    "require-dev": {
     },
     "config": {
         "allow-plugins": {
@@ -65,5 +65,8 @@
             "allow-contrib": false,
             "require": "7.3.*"
         }
+    },
+    "require-dev": {
+        "symfony/maker-bundle": "^1.64"
     }
 }
