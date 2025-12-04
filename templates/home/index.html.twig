@@ -129,7 +129,7 @@
 <div class="min-h-screen" style="background-color: var(--bg-dark);">
     <!-- Navigation -->
     <nav class="flex items-center justify-center fixed top-0 left-0 right-0 z-50 pb-0 pt-4 mt-8">
-        <div class="nav-content flex items-center justify-between w-full max-w-[1317px] px-6 py-4 backdrop-blur-md bg-black/20 rounded-2xl border border-white/5">
+        <div class="nav-content flex items-center justify-between w-full max-w-[1317px] px-6 py-4 backdrop-blur-md rounded-2xl border border-white/5" style="background-color: rgba(17, 16, 24, 0.9);">
             <!-- Logo -->
             <svg width="163" height="32" viewBox="0 0 163 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M23.817 3.35623L19.3719 7.12965L22.4816 6.81865L23.8294 4.48508L31.5969 8.96947L30.4681 12.5867L24.6566 12.1123L27.0753 14.0914L29.6785 13.3939L32 22.0575L28.6441 23.817L24.87 19.3719L25.181 22.4816L27.5149 23.8294L23.0305 31.5969L19.4133 30.4681L19.8874 24.6566L17.9086 27.0753L18.6061 29.6785L9.94248 32L8.183 28.6441L12.6277 24.87L9.51804 25.181L8.17059 27.5149L0.403064 23.0305L1.53192 19.4133L7.34308 19.8874L4.92435 17.9086L2.3215 18.6061L0 9.94248L3.35588 8.183L7.12965 12.6277L6.81865 9.51804L4.48508 8.17059L8.96947 0.403064L12.5867 1.53192L12.1123 7.34308L14.0914 4.92435L13.3939 2.3215L22.0575 0L23.817 3.35623ZM13.6428 11.6058L11.2262 14.5596L11.6058 18.3568L14.5596 20.7735L18.3568 20.3939L20.7735 17.44L20.3939 13.6428L17.44 11.2262L13.6428 11.6058Z" fill="#FCFCFF"/>
@@ -208,6 +208,215 @@
             <!-- Right Image/Video -->
             <div class="hero-image w-[468px] flex-shrink-0">
                 <img src="/images/image_processing20241213-29111-c163dz.jpg" alt="Spectacles" class="w-full h-full rounded-2xl object-cover" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="mt-[80px] mb-0">
+        <div class="hero-section flex flex-col items-stretch justify-center gap-[135px] py-12" style="margin-left: 40px; margin-right: 40px; width: calc(100% - 80px); max-width: calc(100% - 80px); border-top: 1px solid #1D1C2C; border-bottom: 1px solid #1D1C2C; border-left: 1px solid #1D1C2C; border-right: 1px solid #1D1C2C;">
+            <!-- Left Content -->
+            <div class="flex flex-col gap-8 max-w-[717px] justify-center items-center mx-auto">
+                <!-- Badge -->
+                <div class="px-4 py-2.5 rounded-full outline outline-1 outline-offset-[-1px] outline-white/10 inline-flex justify-start items-center gap-3 w-fit" style="background-color: #15131C;">
+                    <i class="ph-duotone ph-book-open-text" style="font-size: 20px; color: #FFFFFF;"></i>
+                    <div class="justify-start text-white text-sm font-['Aspekta'] leading-4">RESERVATION</div>
+                </div>
+
+                <!-- Main Heading -->
+                <div class="flex flex-col justify-center" style="gap: -20px;">
+                    <h1 class="text-[64px] leading-[1.1] text-white w-[750px] text-center" style="font-weight: 500; letter-spacing: -0.02em; margin-bottom: -20px;">
+                        Choisissez le spectacle<br><span style="font-family: 'Instrument Serif', serif; font-style: italic; letter-spacing: -0.02em; font-size: 70px; color: #FFFFFF;">qui vous plaît.</span>
+                    </h1>
+                </div>
+
+                <!-- Description -->
+                <p class="leading-relaxed max-w-[450px] text-center" style="font-size: 18px; color: #6E7386;">
+                    Réservez en un instant : choisissez, indiquez le nombre de places et validez. Simple et rapide.
+                </p>
+            </div>
+
+            <!-- Grid Cards Spectacles -->
+            <div class="grid grid-cols-2 gap-x-12 gap-y-16 w-full max-w-[1100px] mx-auto">
+                <!-- Card Spectacle 1 -->
+                <div class="border border-white/10 transition-all duration-300 ease-out cursor-pointer hover:scale-[1.03] hover:-translate-y-1" style="background-color: rgba(17, 16, 24, 0.6); border-radius: 20px;">
+                    <div class="p-2 pb-0">
+                        <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=800&h=600&fit=crop" alt="Le Roi Lion" class="w-full h-48 object-cover" style="border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05);" />
+                    </div>
+                    <div class="p-6 flex flex-col" style="gap: 12px;">
+                        <h3 class="text-2xl font-semibold text-white">Le Roi Lion</h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-currency-eur" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-lg font-medium">35€</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-map-pin" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-base">Théâtre Mogador</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-green-400 rounded-full outline outline-4 outline-green-400/30"></div>
+                            <span class="text-white text-base">12 places disponibles</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-gradient-to-b from-white to-white rounded-xl shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] outline outline-1 outline-white/20 inline-flex justify-center items-center gap-2.5 transition-all duration-200 hover:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25),0_4px_12px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] cursor-pointer group mt-4">
+                        <div class="justify-start text-neutral-900 text-lg font-medium font-['Aspekta']">Réserver</div>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200 group-hover:translate-x-1">
+                            <path d="M13.207 10.5H11.207V3.41406L1.41406 13.207L0 11.793L9.79297 2H2.70703V0H13.207V10.5Z" fill="#121117"/>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- Card Spectacle 2 -->
+                <div class="border border-white/10 transition-all duration-300 ease-out cursor-pointer hover:scale-[1.03] hover:-translate-y-1" style="background-color: rgba(17, 16, 24, 0.6); border-radius: 20px;">
+                    <div class="p-2 pb-0">
+                        <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&h=600&fit=crop" alt="Mamma Mia!" class="w-full h-48 object-cover" style="border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05);" />
+                    </div>
+                    <div class="p-6 flex flex-col" style="gap: 12px;">
+                        <h3 class="text-2xl font-semibold text-white">Mamma Mia!</h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-currency-eur" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-lg font-medium">42€</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-map-pin" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-base">Théâtre de Paris</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-green-400 rounded-full outline outline-4 outline-green-400/30"></div>
+                            <span class="text-white text-base">15 places disponibles</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-gradient-to-b from-white to-white rounded-xl shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] outline outline-1 outline-white/20 inline-flex justify-center items-center gap-2.5 transition-all duration-200 hover:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25),0_4px_12px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] cursor-pointer group mt-4">
+                        <div class="justify-start text-neutral-900 text-lg font-medium font-['Aspekta']">Réserver</div>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200 group-hover:translate-x-1">
+                            <path d="M13.207 10.5H11.207V3.41406L1.41406 13.207L0 11.793L9.79297 2H2.70703V0H13.207V10.5Z" fill="#121117"/>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- Card Spectacle 3 -->
+                <div class="border border-white/10 transition-all duration-300 ease-out cursor-pointer hover:scale-[1.03] hover:-translate-y-1" style="background-color: rgba(17, 16, 24, 0.6); border-radius: 20px;">
+                    <div class="p-2 pb-0">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop" alt="Les Misérables" class="w-full h-48 object-cover" style="border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05);" />
+                    </div>
+                    <div class="p-6 flex flex-col" style="gap: 12px;">
+                        <h3 class="text-2xl font-semibold text-white">Les Misérables</h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-currency-eur" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-lg font-medium">28€</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-map-pin" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-base">Opéra Bastille</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-green-400 rounded-full outline outline-4 outline-green-400/30"></div>
+                            <span class="text-white text-base">8 places disponibles</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-gradient-to-b from-white to-white rounded-xl shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] outline outline-1 outline-white/20 inline-flex justify-center items-center gap-2.5 transition-all duration-200 hover:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25),0_4px_12px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] cursor-pointer group mt-4">
+                        <div class="justify-start text-neutral-900 text-lg font-medium font-['Aspekta']">Réserver</div>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200 group-hover:translate-x-1">
+                            <path d="M13.207 10.5H11.207V3.41406L1.41406 13.207L0 11.793L9.79297 2H2.70703V0H13.207V10.5Z" fill="#121117"/>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- Card Spectacle 4 -->
+                <div class="border border-white/10 transition-all duration-300 ease-out cursor-pointer hover:scale-[1.03] hover:-translate-y-1" style="background-color: rgba(17, 16, 24, 0.6); border-radius: 20px;">
+                    <div class="p-2 pb-0">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&h=600&fit=crop" alt="Starmania" class="w-full h-48 object-cover" style="border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05);" />
+                    </div>
+                    <div class="p-6 flex flex-col" style="gap: 12px;">
+                        <h3 class="text-2xl font-semibold text-white">Starmania</h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-currency-eur" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-lg font-medium">38€</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-map-pin" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-base">Palais des Congrès</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-green-400 rounded-full outline outline-4 outline-green-400/30"></div>
+                            <span class="text-white text-base">20 places disponibles</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-gradient-to-b from-white to-white rounded-xl shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] outline outline-1 outline-white/20 inline-flex justify-center items-center gap-2.5 transition-all duration-200 hover:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25),0_4px_12px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] cursor-pointer group mt-4">
+                        <div class="justify-start text-neutral-900 text-lg font-medium font-['Aspekta']">Réserver</div>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200 group-hover:translate-x-1">
+                            <path d="M13.207 10.5H11.207V3.41406L1.41406 13.207L0 11.793L9.79297 2H2.70703V0H13.207V10.5Z" fill="#121117"/>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- Card Spectacle 5 -->
+                <div class="border border-white/10 transition-all duration-300 ease-out cursor-pointer hover:scale-[1.03] hover:-translate-y-1" style="background-color: rgba(17, 16, 24, 0.6); border-radius: 20px;">
+                    <div class="p-2 pb-0">
+                        <img src="https://images.unsplash.com/photo-1478147427282-58a87a120781?w=800&h=600&fit=crop" alt="Notre-Dame de Paris" class="w-full h-48 object-cover" style="border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05);" />
+                    </div>
+                    <div class="p-6 flex flex-col" style="gap: 12px;">
+                        <h3 class="text-2xl font-semibold text-white">Notre-Dame de Paris</h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-currency-eur" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-lg font-medium">32€</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-map-pin" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-base">Palais des Sports</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-green-400 rounded-full outline outline-4 outline-green-400/30"></div>
+                            <span class="text-white text-base">18 places disponibles</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-gradient-to-b from-white to-white rounded-xl shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] outline outline-1 outline-white/20 inline-flex justify-center items-center gap-2.5 transition-all duration-200 hover:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25),0_4px_12px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] cursor-pointer group mt-4">
+                        <div class="justify-start text-neutral-900 text-lg font-medium font-['Aspekta']">Réserver</div>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200 group-hover:translate-x-1">
+                            <path d="M13.207 10.5H11.207V3.41406L1.41406 13.207L0 11.793L9.79297 2H2.70703V0H13.207V10.5Z" fill="#121117"/>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
+
+                <!-- Card Spectacle 6 -->
+                <div class="border border-white/10 transition-all duration-300 ease-out cursor-pointer hover:scale-[1.03] hover:-translate-y-1" style="background-color: rgba(17, 16, 24, 0.6); border-radius: 20px;">
+                    <div class="p-2 pb-0">
+                        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800&h=600&fit=crop" alt="Cats" class="w-full h-48 object-cover" style="border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05);" />
+                    </div>
+                    <div class="p-6 flex flex-col" style="gap: 12px;">
+                        <h3 class="text-2xl font-semibold text-white">Cats</h3>
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-currency-eur" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-lg font-medium">29€</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="ph-duotone ph-map-pin" style="font-size: 20px; color: #FFFFFF;"></i>
+                            <span class="text-white text-base">Théâtre du Châtelet</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 bg-green-400 rounded-full outline outline-4 outline-green-400/30"></div>
+                            <span class="text-white text-base">6 places disponibles</span>
+                        </div>
+                    </div>
+                    <button class="w-full px-6 py-3 bg-gradient-to-b from-white to-white rounded-xl shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] outline outline-1 outline-white/20 inline-flex justify-center items-center gap-2.5 transition-all duration-200 hover:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25),0_4px_12px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] cursor-pointer group mt-4">
+                        <div class="justify-start text-neutral-900 text-lg font-medium font-['Aspekta']">Réserver</div>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200 group-hover:translate-x-1">
+                            <path d="M13.207 10.5H11.207V3.41406L1.41406 13.207L0 11.793L9.79297 2H2.70703V0H13.207V10.5Z" fill="#121117"/>
+                        </svg>
+                    </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
