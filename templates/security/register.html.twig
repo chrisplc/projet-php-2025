@@ -1,0 +1,128 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Créer un compte - Spektacles{% endblock %}
+
+{% block body %}
+<div class="min-h-screen flex items-center justify-center" style="background-color: #131119; padding: 40px;">
+    <div class="w-full max-w-[500px]">
+        <div class="border border-white/10 rounded-2xl p-8" style="background-color: rgba(17, 16, 24, 0.6);">
+            <h1 class="text-3xl font-semibold text-white mb-6 text-center">Créer un compte</h1>
+            
+            {% if error is defined %}
+                <div class="mb-4 p-4 rounded-xl bg-red-500/20 border border-red-500/50 text-red-400 text-sm">
+                    {{ error }}
+                </div>
+            {% endif %}
+            
+            <form method="post" class="flex flex-col gap-6">
+                <div class="flex flex-col gap-2">
+                    <label for="nom" class="text-white text-sm font-medium">Nom</label>
+                    <input 
+                        type="text" 
+                        id="nom" 
+                        name="nom" 
+                        required 
+                        class="w-full px-4 py-3 rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors"
+                        placeholder="Votre nom"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="prenom" class="text-white text-sm font-medium">Prénom</label>
+                    <input 
+                        type="text" 
+                        id="prenom" 
+                        name="prenom" 
+                        required 
+                        class="w-full px-4 py-3 rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors"
+                        placeholder="Votre prénom"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="email" class="text-white text-sm font-medium">Adresse email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        class="w-full px-4 py-3 rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors"
+                        placeholder="votre@email.com"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="password" class="text-white text-sm font-medium">Mot de passe</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        required 
+                        class="w-full px-4 py-3 rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors"
+                        placeholder="Votre mot de passe"
+                    />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <label for="password_confirm" class="text-white text-sm font-medium">Confirmer le mot de passe</label>
+                    <input 
+                        type="password" 
+                        id="password_confirm" 
+                        name="password_confirm" 
+                        required 
+                        class="w-full px-4 py-3 rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors"
+                        placeholder="Confirmez votre mot de passe"
+                    />
+                    <span id="password-error" class="text-red-400 text-sm hidden">Les mots de passe ne correspondent pas</span>
+                </div>
+
+                <button 
+                    type="submit" 
+                    class="w-full px-6 py-3 bg-gradient-to-b from-white to-white rounded-xl shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] outline outline-1 outline-white/20 inline-flex justify-center items-center gap-2.5 transition-all duration-200 hover:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25),0_4px_12px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] cursor-pointer group mt-2"
+                >
+                    <div class="justify-start text-neutral-900 text-lg font-medium font-['Aspekta']">Créer mon compte</div>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200 group-hover:translate-x-1">
+                        <path d="M13.207 10.5H11.207V3.41406L1.41406 13.207L0 11.793L9.79297 2H2.70703V0H13.207V10.5Z" fill="#121117"/>
+                    </svg>
+                </button>
+            </form>
+
+            <div class="mt-6 text-center">
+                <a href="{{ path('app_home') }}" class="text-white/60 text-sm hover:text-white transition">Retour à l'accueil</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const password = document.getElementById('password');
+        const passwordConfirm = document.getElementById('password_confirm');
+        const passwordError = document.getElementById('password-error');
+        const form = document.querySelector('form');
+
+        function validatePasswords() {
+            if (password.value !== passwordConfirm.value) {
+                passwordError.classList.remove('hidden');
+                passwordConfirm.setCustomValidity('Les mots de passe ne correspondent pas');
+                return false;
+            } else {
+                passwordError.classList.add('hidden');
+                passwordConfirm.setCustomValidity('');
+                return true;
+            }
+        }
+
+        passwordConfirm.addEventListener('input', validatePasswords);
+        password.addEventListener('input', validatePasswords);
+
+        form.addEventListener('submit', function(e) {
+            if (!validatePasswords()) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    });
+</script>
+{% endblock %}
+
