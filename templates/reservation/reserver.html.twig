@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation - {{ spectacle.titre }} - Spektacles{% endblock %}
+
+{% block body %}
+<div class="min-h-screen" style="background-color: #131119; padding: 40px;">
+    <div class="max-w-4xl mx-auto">
+        <div class="mb-8">
+            <a href="{{ path('app_home') }}" class="text-white/60 text-sm hover:text-white transition inline-flex items-center gap-2">
+                <i class="ph-duotone ph-arrow-left" style="font-size: 20px;"></i>
+                Retour aux spectacles
+            </a>
+        </div>
+
+        <div class="border border-white/10 rounded-2xl overflow-hidden" style="background-color: rgba(17, 16, 24, 0.6);">
+            <!-- Image du spectacle -->
+            {% if spectacle.image %}
+                <div class="w-full h-64 overflow-hidden">
+                    <img src="{{ spectacle.image }}" alt="{{ spectacle.titre }}" class="w-full h-full object-cover">
+                </div>
+            {% endif %}
+
+            <div class="p-8">
+                <div class="mb-6">
+                    <label for="select_spectacle" class="block text-white text-sm font-medium mb-3">
+                        Choisir un spectacle
+                    </label>
+                    <select 
+                        id="select_spectacle" 
+                        class="w-full px-4 py-3 rounded-xl border border-white/10 bg-black/20 text-white focus:outline-none focus:border-white/20 transition-colors"
+                    >
+                        {% for spec in tousLesSpectacles %}
+                            <option value="{{ spec.id }}" {% if spec.id == spectacle.id %}selected{% endif %}>
+                                {{ spec.titre }} - {{ spec.prix }}€ - {{ spec.lieu }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <h1 class="text-3xl font-semibold text-white mb-6">{{ spectacle.titre }}</h1>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="flex items-center gap-3">
+                        <i class="ph-duotone ph-currency-eur" style="font-size: 24px; color: #FFFFFF;"></i>
+                        <div>
+                            <div class="text-white/60 text-sm">Prix unitaire</div>
+                            <div class="text-white text-xl font-semibold">{{ spectacle.prix }}€</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="ph-duotone ph-map-pin" style="font-size: 24px; color: #FFFFFF;"></i>
+                        <div>
+                            <div class="text-white/60 text-sm">Lieu</div>
+                            <div class="text-white text-lg">{{ spectacle.lieu }}</div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="ph-duotone ph-users" style="font-size: 24px; color: #FFFFFF;"></i>
+                        <div>
+                            <div class="text-white/60 text-sm">Places disponibles</div>
+                            <div class="text-white text-lg">{{ spectacle.placesDisponibles }} places</div>
+                        </div>
+                    </div>
+                </div>
+
+                {% for message in app.flashes('error') %}
+                    <div class="mb-6 p-4 rounded-xl bg-red-500/20 border border-red-500/50 text-red-400 text-sm">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+
+                <form method="post" class="border-t border-white/10 pt-8">
+                    <div class="mb-6">
+                        <label for="nombre_places" class="block text-white text-sm font-medium mb-3">
+                            Nombre de places
+                        </label>
+                        <input 
+                            type="number" 
+                            id="nombre_places" 
+                            name="nombre_places" 
+                            min="1" 
+                            max="{{ spectacle.placesDisponibles }}"
+                            value="1"
+                            required 
+                            class="w-full max-w-xs px-4 py-3 rounded-xl border border-white/10 bg-black/20 text-white placeholder-white/40 focus:outline-none focus:border-white/20 transition-colors"
+                        />
+                        <p class="text-white/60 text-sm mt-2">Maximum {{ spectacle.placesDisponibles }} places disponibles</p>
+                    </div>
+
+                    <div class="mb-6 p-4 rounded-xl bg-white/5 border border-white/10">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-white/60">Prix unitaire :</span>
+                            <span class="text-white font-semibold" id="prix-unitaire">{{ spectacle.prix }}€</span>
+                        </div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-white/60">Nombre de places :</span>
+                            <span class="text-white font-semibold" id="nb-places-display">1</span>
+                        </div>
+                        <div class="border-t border-white/10 pt-2 mt-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-white text-lg font-semibold">Prix total :</span>
+                                <span class="text-white text-2xl font-bold" id="prix-total">{{ spectacle.prix }}€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button 
+                        type="submit" 
+                        class="w-full px-6 py-4 bg-gradient-to-b from-white to-white rounded-xl shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] outline outline-1 outline-white/20 inline-flex justify-center items-center gap-2.5 transition-all duration-200 hover:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25),0_4px_12px_rgba(0,0,0,0.15)] hover:-translate-y-0.5 active:translate-y-0 active:shadow-[inset_0px_2px_0px_0px_rgba(73,76,115,0.25)] cursor-pointer group"
+                    >
+                        <div class="justify-start text-neutral-900 text-lg font-medium font-['Aspekta']">Confirmer la réservation</div>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200 group-hover:translate-x-1">
+                            <path d="M13.207 10.5H11.207V3.41406L1.41406 13.207L0 11.793L9.79297 2H2.70703V0H13.207V10.5Z" fill="#121117"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const nombrePlacesInput = document.getElementById('nombre_places');
+        const nbPlacesDisplay = document.getElementById('nb-places-display');
+        const prixTotalDisplay = document.getElementById('prix-total');
+        const prixUnitaireDisplay = document.getElementById('prix-unitaire');
+        const selectSpectacle = document.getElementById('select_spectacle');
+        let prixUnitaire = parseFloat({{ spectacle.prix }});
+        
+        // Données des spectacles pour le calcul dynamique
+        const spectaclesData = {
+            {% for spec in tousLesSpectacles %}
+            {{ spec.id }}: {
+                prix: parseFloat({{ spec.prix }}),
+                placesDisponibles: {{ spec.placesDisponibles }}
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        };
+
+        function updateTotal() {
+            const nbPlaces = parseInt(nombrePlacesInput.value) || 1;
+            const total = prixUnitaire * nbPlaces;
+            nbPlacesDisplay.textContent = nbPlaces;
+            prixTotalDisplay.textContent = total.toFixed(2) + '€';
+        }
+
+        // Changer de spectacle
+        selectSpectacle.addEventListener('change', function() {
+            const spectacleId = parseInt(this.value);
+            if (spectaclesData[spectacleId]) {
+                window.location.href = '{{ path('app_reservation', {id: '__ID__'}) }}'.replace('__ID__', spectacleId);
+            }
+        });
+
+        nombrePlacesInput.addEventListener('input', updateTotal);
+        updateTotal();
+    });
+</script>
+{% endblock %}
+

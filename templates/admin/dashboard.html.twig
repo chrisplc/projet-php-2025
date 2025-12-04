@@ -1,0 +1,230 @@
+{% extends '@EasyAdmin/layout.html.twig' %}
+
+{% block content_title %}Dashboard - Spektacles{% endblock %}
+
+{% block main %}
+<div class="dashboard-content">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="mb-4">Bienvenue dans l'administration</h1>
+        </div>
+    </div>
+
+    {# Statistiques #}
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card border-primary">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title text-muted mb-2">Utilisateurs</h5>
+                            <h2 class="mb-0">{{ nbUtilisateurs }}</h2>
+                        </div>
+                        <div class="text-primary" style="font-size: 3rem;">
+                            <i class="fa fa-users"></i>
+                        </div>
+                    </div>
+                    <a href="{{ urlUtilisateurs }}" class="btn btn-primary btn-sm mt-3">
+                        <i class="fa fa-arrow-right"></i> Gérer les utilisateurs
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-success">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title text-muted mb-2">Spectacles</h5>
+                            <h2 class="mb-0">{{ nbSpectacles }}</h2>
+                        </div>
+                        <div class="text-success" style="font-size: 3rem;">
+                            <i class="fa fa-theater-masks"></i>
+                        </div>
+                    </div>
+                    <a href="{{ urlSpectacles }}" class="btn btn-success btn-sm mt-3">
+                        <i class="fa fa-arrow-right"></i> Gérer les spectacles
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card border-info">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="card-title text-muted mb-2">Réservations</h5>
+                            <h2 class="mb-0">{{ nbReservations }}</h2>
+                        </div>
+                        <div class="text-info" style="font-size: 3rem;">
+                            <i class="fa fa-ticket-alt"></i>
+                        </div>
+                    </div>
+                    <a href="{{ urlReservations }}" class="btn btn-info btn-sm mt-3">
+                        <i class="fa fa-arrow-right"></i> Gérer les réservations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        {# Réservations récentes #}
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fa fa-clock"></i> Réservations récentes</h5>
+                </div>
+                <div class="card-body">
+                    {% if reservationsRecentes|length > 0 %}
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Spectacle</th>
+                                        <th>Client</th>
+                                        <th>Places</th>
+                                        <th>Total</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for reservation in reservationsRecentes %}
+                                        <tr>
+                                            <td>{{ reservation.spectacle.titre }}</td>
+                                            <td>{{ reservation.utilisateur.email }}</td>
+                                            <td>{{ reservation.nombrePlaces }}</td>
+                                            <td>{{ reservation.prixTotal }}€</td>
+                                            <td>{{ reservation.dateReservation|date('d/m/Y H:i') }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="{{ urlReservations }}" class="btn btn-sm btn-outline-primary mt-2">
+                            Voir toutes les réservations
+                        </a>
+                    {% else %}
+                        <p class="text-muted mb-0">Aucune réservation récente</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        {# Spectacles avec faible stock #}
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fa fa-exclamation-triangle"></i> Spectacles avec faible stock</h5>
+                </div>
+                <div class="card-body">
+                    {% if spectaclesFaibleStock|length > 0 %}
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Spectacle</th>
+                                        <th>Lieu</th>
+                                        <th>Places restantes</th>
+                                        <th>Statut</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for spectacle in spectaclesFaibleStock %}
+                                        <tr>
+                                            <td>{{ spectacle.titre }}</td>
+                                            <td>{{ spectacle.lieu }}</td>
+                                            <td>
+                                                <span class="badge {% if spectacle.placesDisponibles < 5 %}bg-danger{% elseif spectacle.placesDisponibles < 10 %}bg-warning{% else %}bg-info{% endif %}">
+                                                    {{ spectacle.placesDisponibles }}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                {% if spectacle.placesDisponibles < 5 %}
+                                                    <span class="text-danger">Critique</span>
+                                                {% elseif spectacle.placesDisponibles < 10 %}
+                                                    <span class="text-warning">Faible</span>
+                                                {% else %}
+                                                    <span class="text-info">Attention</span>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <a href="{{ urlSpectacles }}" class="btn btn-sm btn-outline-success mt-2">
+                            Gérer les spectacles
+                        </a>
+                    {% else %}
+                        <p class="text-muted mb-0">Tous les spectacles ont suffisamment de places disponibles</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# Actions rapides #}
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0"><i class="fa fa-bolt"></i> Actions rapides</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 mb-2">
+                            <a href="{{ urlSpectaclesNew }}" class="btn btn-success w-100">
+                                <i class="fa fa-plus"></i> Nouveau spectacle
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <a href="{{ urlUtilisateursNew }}" class="btn btn-primary w-100">
+                                <i class="fa fa-user-plus"></i> Nouvel utilisateur
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <a href="{{ urlReservations }}" class="btn btn-info w-100">
+                                <i class="fa fa-list"></i> Toutes les réservations
+                            </a>
+                        </div>
+                        <div class="col-md-3 mb-2">
+                            <a href="{{ path('app_home') }}" class="btn btn-secondary w-100">
+                                <i class="fa fa-home"></i> Retour au site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.dashboard-content {
+    padding: 20px;
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 600;
+}
+
+.table-sm td, .table-sm th {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.badge {
+    font-size: 0.875rem;
+    padding: 0.35em 0.65em;
+}
+</style>
+{% endblock %}
+

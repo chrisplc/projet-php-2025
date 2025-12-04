@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation de réservation - Spektacles{% endblock %}
+
+{% block body %}
+<div class="min-h-screen flex items-center justify-center" style="background-color: #131119; padding: 40px;">
+    <div class="w-full max-w-2xl">
+        <div class="border border-white/10 rounded-2xl p-8" style="background-color: rgba(17, 16, 24, 0.6);">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/20 border border-green-500/50 mb-4">
+                    <i class="ph-duotone ph-check-circle" style="font-size: 32px; color: #4AC16E;"></i>
+                </div>
+                <h1 class="text-3xl font-semibold text-white mb-2">Réservation confirmée !</h1>
+                <p class="text-white/60">Votre réservation a été enregistrée avec succès.</p>
+            </div>
+
+            <div class="border border-white/10 rounded-xl p-6 mb-6" style="background-color: rgba(0, 0, 0, 0.2);">
+                <h2 class="text-xl font-semibold text-white mb-4">Détails de la réservation</h2>
+                
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-white/60">Spectacle :</span>
+                        <span class="text-white font-semibold">{{ reservation.spectacle.titre }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-white/60">Lieu :</span>
+                        <span class="text-white">{{ reservation.spectacle.lieu }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-white/60">Nombre de places :</span>
+                        <span class="text-white font-semibold">{{ reservation.nombrePlaces }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-white/60">Prix unitaire :</span>
+                        <span class="text-white">{{ reservation.prixUnitaire }}€</span>
+                    </div>
+                    <div class="border-t border-white/10 pt-4 mt-4">
+                        <div class="flex justify-between items-center">
+                            <span class="text-white text-lg font-semibold">Prix total :</span>
+                            <span class="text-white text-2xl font-bold">{{ reservation.prixTotal }}€</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center pt-4 border-t border-white/10">
+                        <span class="text-white/60">Email du client :</span>
+                        <span class="text-white font-medium">{{ reservation.utilisateur.email }}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-white/60">Date de réservation :</span>
+                        <span class="text-white">{{ reservation.dateReservation|date('d/m/Y à H:i') }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <a href="{{ path('app_home') }}" class="flex-1 px-6 py-3 border border-white/10 rounded-xl text-white text-center hover:bg-white/5 transition">
+                    Retour à l'accueil
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

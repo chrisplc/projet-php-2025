@@ -5,30 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="926f307c-8779-40c9-9062-026939c37168" name="Changes" comment="Tailwind Installation">
-      <change afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/easyadmin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.env.dev" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/styles/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bin/console" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/bundles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/packages/cache.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/packages/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/packages/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/preload.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routes.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routes/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/packages.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/postcss.config.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Controller/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/symfony.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +39,9 @@
     &quot;accountId&quot;: &quot;12d31a2c-48f8-479c-939a-409478654e38&quot;
   }
 }</component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -74,12 +60,13 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/chritian/Desktop/projet-php-2025&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -124,6 +111,9 @@
       <workItem from="1762093398464" duration="76000" />
       <workItem from="1762242195649" duration="8000" />
       <workItem from="1762246045128" duration="3010000" />
+      <workItem from="1762784640226" duration="10141000" />
+      <workItem from="1763662743720" duration="3000" />
+      <workItem from="1764160960936" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="Setup Symfony &amp; TailwindCSS">
       <option name="closed" value="true" />
