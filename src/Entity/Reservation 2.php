@@ -110,9 +110,5 @@ class Reservation
 
         return $this;
     }
-
-    public function __toString(): string
-    {
-        return sprintf('Réservation #%d - %s', $this->id ?? 0, $this->spectacle?->getTitre() ?? '');
-    }
 }
+
